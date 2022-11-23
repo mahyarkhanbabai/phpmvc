@@ -1,0 +1,14 @@
+Options -Indexes -MultiViews
+
+<Files *.ini>
+    Order deny,allow
+    Deny from all
+</Files>
+
+RedirectMatch 403 ^/\.git
+RedirectMatch 403 ^/composer\.(json|lock|phar)$
+
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ([\s\S]+)$ index.php?param=$1 [L,QSA,NC,NE]
