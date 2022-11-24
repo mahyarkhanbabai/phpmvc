@@ -20,14 +20,15 @@ class DB
 	private $log;
 	# @array, The parameters of the SQL query
 	private $parameters;
+	private static $instance = null;
 
 	public static function getInstance()
 	{
-		static $instance = null;
-		if (null === $instance) {
-			$instance = new static();
+		if (self::$instance == null)
+		{
+			self::$instance = new DB();
 		}
-		return $instance;
+		return self::$instance;
 	}
 
 	/**
@@ -39,17 +40,11 @@ class DB
 	 *
 	 * this is a protected method because this class should only be initiated using getInstance method
 	 */
-	function __construct()
+	private function __construct()
 	{
 		$this->log = new Log();
 		$this->Connect();
 		$this->parameters = array();
-	}
-	function __clone()
-	{
-	}
-	function __wakeup()
-	{
 	}
 
 	/**
@@ -69,7 +64,6 @@ class DB
 			'user'=>getenv('DB_USERNAME'),
 			'password'=>getenv('DB_PASSWORD')
 		];
-		if(empty($dbSettings['user']))
 
 		try
 		{
@@ -91,15 +85,12 @@ class DB
 			throw new Exception($message);
 		}
 
-		global $dbPdo;
 		if (empty($dbPdo))
 		{
 			$this->bConnected = false;
 			return false;
 		}
 
-		$DB_USERNAME = getenv('DB_USERNAME');
-		$DB_PASSWORD = getenv('DB_PASSWORD');
 		$this->pdo = $dbPdo;
 		$this->bConnected = true;
 		return true;
