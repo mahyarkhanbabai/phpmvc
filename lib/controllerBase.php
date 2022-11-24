@@ -9,11 +9,13 @@
 
 class controllerBase
 {
-	use \functions\controller,\functions\everywhere;
+	use \functions\controllerTrait,\functions\everywhere;
 	protected view $view;
 
 	function __construct()
 	{
 		$this->view=new view;
+		$settingsModel=new settingsModel();
+		$this->view->set('appSettings',$settingsModel->getSettings());
 	}
 }

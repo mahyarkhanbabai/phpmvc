@@ -1,0 +1,8 @@
+Time : 12:06:51
+We could not connect to the database: PDO::__construct(): Argument #1 ($dsn) must be a valid data source name
+
+Time : 12:05:38
+We could not connect to the database: PDO::__construct(): Argument #1 ($dsn) must be a valid data source name
+
+Time : 12:05:03
+We could not connect to the database: PDO::__construct(): Argument #1 ($dsn) must be a valid data source name

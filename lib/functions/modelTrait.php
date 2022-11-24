@@ -7,7 +7,7 @@
  */
 
 namespace functions;
-trait model
+trait modelTrait
 {
-	use controllerAndModel;
+	use controllerAndModelTrait;
 }

@@ -7,9 +7,9 @@ namespace functions;
  * Date: 11/24/2022
  * Time: 11:16 AM
  */
-trait controller
+trait controllerTrait
 {
-	use controllerAndModel;
+	use controllerAndModelTrait;
 	/**
 	 * This function returns a new random string (alphanumeric, special characters etc ...) according to given parameters
 	 * @param int $length

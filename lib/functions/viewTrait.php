@@ -7,6 +7,6 @@
  */
 
 namespace functions;
-trait view
+trait viewTrait
 {
 }

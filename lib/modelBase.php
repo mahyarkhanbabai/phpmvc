@@ -8,7 +8,7 @@
  */
 class modelBase
 {
-	use \functions\model;
+	use \functions\modelTrait;
 	protected DB $db;
 	function __construct(){
 		$this->db=DB::getInstance();

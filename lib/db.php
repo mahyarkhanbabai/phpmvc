@@ -39,16 +39,16 @@ class DB
 	 *
 	 * this is a protected method because this class should only be initiated using getInstance method
 	 */
-	protected function __construct()
+	function __construct()
 	{
 		$this->log = new Log();
 		$this->Connect();
 		$this->parameters = array();
 	}
-	private function __clone()
+	function __clone()
 	{
 	}
-	private function __wakeup()
+	function __wakeup()
 	{
 	}
 
@@ -71,9 +71,9 @@ class DB
 		];
 		if(empty($dbSettings['user']))
 
-		$dsn = 'mysql:dbname=' . $dbSettings["dbname"] . ';host=' . $dbSettings["host"] . '';
 		try
 		{
+			$dsn = 'mysql:dbname=' . $dbSettings["dbname"] . ';host=' . $dbSettings["host"] . '';
 			# Read settings from INI file, set UTF8
 			$dbPdo = new PDO($dsn, $dbSettings["user"], $dbSettings["password"], array(
 				PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"

@@ -7,7 +7,7 @@
  */
 
 namespace functions;
-trait controllerAndModel
+trait controllerAndModelTrait
 {
 	/**
 	 * Since array_column is deprecated, this function simulates its functionality

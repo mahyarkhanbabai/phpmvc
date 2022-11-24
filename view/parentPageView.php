@@ -15,7 +15,7 @@ if(!isset($contentView))
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Test Website</title>
+	<title><?= $appSettings['title'] ?></title>
 </head>
 <body>
 <h1>This is a test website</h1>

@@ -8,7 +8,7 @@
  */
 class view
 {
-	use \functions\view,\functions\everywhere;
+	use \functions\viewTrait,\functions\everywhere;
 	/**
 	 * A method that sets view variables (to be used in view html files)
 	 * @param string $var
