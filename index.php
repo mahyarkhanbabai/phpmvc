@@ -40,7 +40,7 @@ function autoloader(string $className): void
 	if (strlen($className) > 10 && substr($className, -10) == 'Controller') {
 		decideToLoadFileOrNamespace($className,$classNameArray,'controller');
 	}
-	elseif (strlen($className) > 10 && substr($className, -10) == 'Model'){
+	elseif (strlen($className) > 5 && substr($className, -5) == 'Model'){
 		decideToLoadFileOrNamespace($className,$classNameArray,'model');
 	}
 	else {
