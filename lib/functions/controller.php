@@ -9,6 +9,7 @@ namespace functions;
  */
 trait controller
 {
+	use controllerAndModel;
 	/**
 	 * This function returns a new random string (alphanumeric, special characters etc ...) according to given parameters
 	 * @param int $length
